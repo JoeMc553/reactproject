@@ -9,7 +9,6 @@ import Signup from './routes/Signup.jsx'
 
 const router = createBrowserRouter  ([
   {path: "/reactproject/", element: <App />},
-  {path: "*", element: <NotFound /> },
   {path: "/dashboard", element: <Dashboard />},
   {path: "/contact", element: <Contact />},
   {path: "/signup", element: <Signup />},
