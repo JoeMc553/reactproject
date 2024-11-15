@@ -3,6 +3,8 @@
 @tailwind utilities;
 @layer base {
   :root {
+    --primaryB: #22d3ee;
+    --primaryB-darker: #06b6d4;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;

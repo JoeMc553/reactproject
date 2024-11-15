@@ -1,6 +1,6 @@
 import './App.css'
 import Navbar from "./components/Navbar";
-import studylogosmaller from './assets/studylogosmaller.png'
+import studylogos from './assets/studylogos.png'
 import Signupbutton from "./components/Signupbutton";
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
@@ -39,11 +39,11 @@ export default function SignIn() {
 
   return (
     
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center bg-white-100 p-8 ">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
       <div class="flex">
         <div class="m-auto w-422">
-        <img src={studylogosmaller}
+        <img src={studylogos}
       height={200}
       width={200}
       />
@@ -67,7 +67,7 @@ export default function SignIn() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
-                focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                focus:outline-none focus:border-[var(--primaryB-darker)] focus:ring-1 focus:ring-[var(--primaryB-darker)]"
             />
           </div>
           <div>
@@ -79,13 +79,13 @@ export default function SignIn() {
               onChange={(e) => setPassword(e.target.value)}
               required
               className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
-                focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                focus:outline-none focus:border-[var(--primaryB-darker)] focus:ring-1 focus:ring-[var(--primaryB-darker)]"
             />
           </div>
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[var(--primaryB)] hover:bg-[var(--primaryB-darker)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Sign In
             </button>
@@ -93,7 +93,7 @@ export default function SignIn() {
         </form>
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{' '}
-          <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+          <a href="/signup" className="font-medium text-[var(--primaryB)] hover:text-[var(--primaryB-darker)]">
           <Link to = "/signup">Signup</Link>
           </a>
         </p>

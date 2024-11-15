@@ -10,7 +10,15 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-      
+		  colors: {
+			'blue2': '#14b8a6',
+			'pink': '#ff49db',
+			'orange': '#ff7849',
+			'green': '#13ce66',
+			'gray-dark': '#273444',
+			'gray': '#8492a6',
+			'gray-light': '#d3dce6',
+		  },
 
 
   		colors: {
