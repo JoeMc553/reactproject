@@ -2,6 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {AiFillPhone, AiOutlineClockCircle} from 'react-icons/ai'
 import {BsChatSquareDots} from 'react-icons/bs'
+import { HiHome } from "react-icons/hi2"
+import { IoSearchOutline, IoPerson  } from "react-icons/io5";
+import { FaUserFriends } from "react-icons/fa";
+import { GrResources } from "react-icons/gr";
+import { FiSearch } from "react-icons/fi";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const Topbar = () => {
   return (
@@ -13,14 +19,15 @@ const Topbar = () => {
       <div className= 'flex'>
         <div className= 'hidden md:flex items-center px-6'>
           <AiOutlineClockCircle size={30} className='text-[var(--primaryB)] mr-2'/>
-          <p>9-8pm</p>
+          <p>next studygroup at 4:30</p>
         </div>
-        <div className= 'hidden md:flex items-center px-6'>
-          <AiFillPhone size={30} className='text-[var(--primaryB)] mr-2'/>
-          <p className= 'text-sm text-grey-700'>805 233-2322</p>
-        </div>
-        <button>
-          Get a free quote
+        <button className= 'hidden md:flex items-center px-6'>
+        <FaUserFriends  size={30} className='text-[var(--primaryB)] mr-2'/>
+          findgroup
+        </button>
+        <button className= 'flex items-center px-6'>
+          <IoMdAddCircleOutline size={30} className='text-[var(--primaryB)] mr-2'/>
+          <p className= 'text-sm text-grey-700'>create group</p>
         </button>
       </div>
   </div>

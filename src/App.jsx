@@ -24,13 +24,10 @@ export default function SignIn() {
     }
 
     try {
-      // Here you would typically call your authentication API
       console.log('Logging in with:', { email, password })
-      
-      // Simulate API call delay
+     
       await new Promise(resolve => setTimeout(resolve, 1000))
 
-      // Redirect to dashboard on successful login
       navigate('/dashboard')
     } catch (err) {
       setError('Invalid email or password')
