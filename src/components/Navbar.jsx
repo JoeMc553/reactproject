@@ -11,11 +11,11 @@ import { FiSearch } from "react-icons/fi";
 const Navbar = () => {
   return (
     <div className= ' flex space-x-9 items-center justify-center bg-gray-200 p-11 fixed bottom-0 left-0 right-0 "'>
-        <Link to = "/dashboard"><HiHome size={30} className='-mt-5  text-[var(--primaryB-darker)] mr-2'/></Link>
-        <Link to = "/findgroup"><FiSearch  size={30} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
-        <Link to = "/friends"><FaUserFriends size={30} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
-        <Link to = "/resources"><GrResources size={30}className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
-        <Link to = "/profile"><IoPerson size={28} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
+        <Link to = "/reactproject/dashboard"><HiHome size={30} className='-mt-5  text-[var(--primaryB-darker)] mr-2'/></Link>
+        <Link to = "/reactproject/findgroup"><FiSearch  size={30} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
+        <Link to = "/reactproject/friends"><FaUserFriends size={30} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
+        <Link to = "/reactproject/resources"><GrResources size={30}className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
+        <Link to = "/reactproject/profile"><IoPerson size={28} className='-mt-5 text-[var(--primaryB-darker)] mr-2'/></Link>
     </div>
   )
 }

@@ -28,7 +28,7 @@ export default function SignIn() {
      
       await new Promise(resolve => setTimeout(resolve, 1000))
 
-      navigate('/dashboard')
+      navigate('/reactproject/dashboard')
     } catch (err) {
       setError('Invalid email or password')
     }
@@ -90,8 +90,8 @@ export default function SignIn() {
         </form>
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{' '}
-          <a href="/signup" className="font-medium text-[var(--primaryB)] hover:text-[var(--primaryB-darker)]">
-          <Link to = "/signup">Signup</Link>
+          <a href="/reactproject/signup" className="font-medium text-[var(--primaryB)] hover:text-[var(--primaryB-darker)]">
+          <Link to = "/reactproject/signup">Signup</Link>
           </a>
         </p>
       </div>
