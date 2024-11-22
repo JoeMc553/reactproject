@@ -16,7 +16,7 @@ export default function ProfilePage() {
     location: 'University of Tech, Building A',
     studyGroups: 5,
     coursesEnrolled: 5,
-    courses1: "Computer Organization and Assembly Language",
+    courses1: "Computer Organization and Assembly",
     courses2: "General Electrical Engineering",
     courses3: "Human Computer Interaction",
     courses4: "Object Oriented Programming",
@@ -25,17 +25,14 @@ export default function ProfilePage() {
   })
 
   return (
-   
-    <div className="min-h-screen bg-gray-100">
-            <Navbar/>
-
-      <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white shadow rounded-lg overflow-hidden"> 
+      <div className="max-w-4xl mx-auto py-2 px-2 sm:px-6 lg:px-8">
+      <Navbar/>
+        <div className="bg-white shadow rounded-largex overflow-hidden"> 
           {/* Cover Image */}
           <div className=" h-[250px] bg-gradient-to-r from-blue-500 to-teal-500 relative">
           <div class="flex justify-center items-center">
           <img 
-                  className=" mt-6 h-[200px] w-[200px] rounded-full ring-4 ring-white"
+                  className=" flex mt-6 h-[200px] w-[200px] rounded-full ring-4 ring-white"
                   src={profiledefault}
                   alt="Profile"
                 />
@@ -81,16 +78,10 @@ export default function ProfilePage() {
                 <dd className="flex mt-3 mr-8 ml-8 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{user.courses3}</dd>
                 <dd className="flex mt-3 mr-8 ml-8 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{user.courses4}</dd>
                 <dd className="flex mt-3 mr-8 ml-8 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{user.courses5}</dd>
-
-
-              </div>
-              
+              </div>        
             </dl>
-          </div>
-
-          
+          </div>       
         </div>
       </div>
-    </div>
   )
 }

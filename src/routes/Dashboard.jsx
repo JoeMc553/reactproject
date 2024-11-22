@@ -1,11 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Topbar from '../components/Topbar'
+import StudyGroupInfoBox from '@/components/StudyGroupInfoBox'
+
 const Dashboard = () => {
   return (
     <>
     <Topbar/> 
     <Navbar/>
+    <div className =' flex justify-center mt-9'>
+    <StudyGroupInfoBox/>
+
+    </div>
+
     <div>Dashboard</div>
 
     <p>

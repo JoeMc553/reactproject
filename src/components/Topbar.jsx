@@ -25,9 +25,11 @@ const Topbar = () => {
         <FaUserFriends  size={30} className='text-[var(--primaryB)] mr-2'/>
           findgroup
         </button>
-        <button className= 'flex items-center px-6'>
-          <IoMdAddCircleOutline size={30} className='text-[var(--primaryB)] mr-2'/>
-          <p className= 'text-sm text-grey-700'>create group</p>
+        <button>
+        <Link to = "/reactproject/creategroup" className= 'flex items-center px-'>
+        <IoMdAddCircleOutline size={30} className='text-[var(--primaryB)] mr-2'/>
+          <p className= 'text-m text-grey-700'>create group</p>
+          </Link>
         </button>
       </div>
   </div>
