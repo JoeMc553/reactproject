@@ -1,46 +1,56 @@
 import React from 'react'
+import axios from 'axios'
+
 import Navbar from "../components/Navbar"
 import studylogos from '../assets/studylogos.png'
-import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 
-export default function SignIn() {
-  const [email, setEmail] = useState('')
+
+export default function SignUp() {
   const [phone, setphone] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [password1, setPassword1] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [selectData, setSelectData] = useState([])
+  const [selectValue, setSelectValue] = useState('')
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    setIsLoading(true)
 
-    if (!email || !password) {
+   
+    if (!email || !phone || !password) {
       setError('Please fill in all fields')
-      return
-    }
-    if (password !== password1) {
-      setError('passwords do not match')
+      setIsLoading(false)
       return
     }
 
     try {
-      // Here you would typically call your authentication API
-      console.log('Logging in with:', { email, password })
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      console.log('Attempting to send signup data:', { email, phone, password })
+      const response = await axios.post('http://localhost:8000/api/signup', {
+        email,
+        phone,
+        password
+      })
 
-      // Redirect to dashboard on successful login
+      console.log('Sign up response:', response.data)
+      
       navigate('/reactproject/dashboard')
     } catch (err) {
-      setError('Invalid email or password')
+      navigate('/reactproject/dashboard')
+      console.error('Error during sign up:', err.response ? err.response.data : err.message)
+      setError(err.response?.data?.message || 'Error creating account. Please try again.')
+      navigate('/reactproject/dashboard')
+    } finally {
+      setIsLoading(false)
     }
   }
-
   return (
     
     <div className="flex items-center justify-center bg-white p-8">
@@ -103,11 +113,11 @@ export default function SignIn() {
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password confirmation</label>
             <input
-              id="password"
+              id="confirmPassword"
               type="password"
-              placeholder="password"
-              value={password1}
-              onChange={(e) => setPassword1(e.target.value)}
+              placeholder="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               required
               className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
                 focus:outline-none focus:border-[var(--primaryB-darker)] focus:ring-1 focus:ring-[var(--primaryB-darker)]"

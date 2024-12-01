@@ -4,33 +4,45 @@ import studylogos from './assets/studylogos.png'
 import Signupbutton from "./components/Signupbutton";
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
-
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    setIsLoading(true)
 
     if (!email || !password) {
       setError('Please fill in all fields')
+      setIsLoading(false)
       return
     }
 
     try {
-      console.log('Logging in with:', { email, password })
-     
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await axios.post('http://localhost:8000/api/signin', {
+        email,
+        password
+      })
 
+      console.log('Sign in successful:', response.data)
+      
+      localStorage.setItem('token', response.data.token)
+      
       navigate('/reactproject/dashboard')
     } catch (err) {
-      setError('Invalid email or password')
+      console.error('Error during sign in:', err.response ? err.response.data : err.message)
+      setError(err.response?.data?.message || 'Invalid email or password. Please try again.')
+    } finally {
+      setIsLoading(false)
     }
   }
 

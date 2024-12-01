@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Book, Users, Award, Edit2, Camera, MapPin, MessageSquare, Bell, Bookmark } from 'lucide-react'
 import studylogos from '../assets/studylogos.png'
 import profiledefault from '../assets/profiledefault.png'
-
+import Topbar from '@/components/Topbar'
 export default function ProfilePage() {
   const [user, setUser] = useState({
     name: 'Alex Johnson',
@@ -27,8 +27,9 @@ export default function ProfilePage() {
   return (
       <div className="max-w-4xl mx-auto py-2 px-2 sm:px-6 lg:px-8">
       <Navbar/>
+      <Topbar/>
         <div className="bg-white shadow rounded-largex overflow-hidden"> 
-          {/* Cover Image */}
+          {}
           <div className=" h-[250px] bg-gradient-to-r from-blue-500 to-teal-500 relative">
           <div class="flex justify-center items-center">
           <img 
@@ -43,7 +44,7 @@ export default function ProfilePage() {
             </button>
           </div>
           </div>
-          {/* Profile Information */}
+          {}
           <div className="">
             <div className="flex items-end">
               <div className="relative">
@@ -64,7 +65,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Stats */}
+          {}
           <div className="border-t border-gray-200 px-4 py-5 sm:p-2">
           <dl className="divide-y divide-gray-200">
               <div className="py-3 sm:py-5 sm:grid sm:grid-cols-1 gap-5 ">

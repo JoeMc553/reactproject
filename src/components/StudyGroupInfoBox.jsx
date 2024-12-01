@@ -7,7 +7,7 @@ export default function StudyGroupInfoBox({ group }) {
   const defaultGroup = {
     name: "Calculus 3",
     members: 8,
-    maxmembers: 8,
+    maxmembers: 9,
     time: "Tuesday 4:00 PM - 6:00 PM",
     location: "Math Building, Room 301",
     description: "going over the exam 2 practice problems and discusing the homework. bring a laptop and note takeing suplies."

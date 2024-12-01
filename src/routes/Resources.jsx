@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import {GraduationCap, Book, Video, FileText, Globe, Calculator, Beaker, Users, Calendar } from 'lucide-react'
+import Topbar from '@/components/Topbar'
 
 const resources = [
   {
@@ -94,6 +95,7 @@ const Resources = () => {
   return (
     <div>
       <Navbar/>
+      <Topbar/>
       <div className="min-h-screen bg-white-100 py-8 px-4 sm:px-6 lg:px-4 mb-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center bg-white py-1 ">
@@ -101,8 +103,8 @@ const Resources = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resources.map((category, index) => (
-            <div key={index} className="bg-white overflow-hidden shadow rounded-lg">
-              <div className=" bg-[var(--primaryB-light)] px-4 py-5 sm:p-6">
+            <div key={index} className="bg-[var(--primaryB-light)] overflow-hidden shadow rounded-lg">
+              <div className="  px-4 py-5 sm:p-6">
                 <div className="flex items-center mb-4">
                   {category.icon}
                   <h2 className="ml-3 text-lg font-medium text-gray-900">{category.category}</h2>
