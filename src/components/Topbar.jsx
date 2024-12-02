@@ -12,7 +12,7 @@ const Topbar = () => {
     <div className= 'flex  justify-between items-center bg-white p-5 fixed top-0 left-0 right-0 px-4 py-2'>
       <div className='flex items-center'>
        
-        <h1 className= 'text-xl font-bold text-grey-700'>STUDY APP</h1>
+        <h1 className= 'text-xl font-bold text-grey-700'>Study Together</h1>
       </div>
       <div className= 'flex'>
         <div className= 'hidden md:flex items-center px-6'>
